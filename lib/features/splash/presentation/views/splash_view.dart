@@ -1,3 +1,6 @@
+import 'package:dalel/core/utils/app_colors.dart';
+import 'package:dalel/core/utils/app_strings.dart';
+import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {
@@ -5,6 +8,11 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: Center(
+        child:
+            Text(AppStrings.appName, style: AppTextStylies.pacifico400Style64,),
+      ),
+    );
   }
 }

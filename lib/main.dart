@@ -1,4 +1,5 @@
 import 'package:dalel/core/routes/app_router.dart';
+import 'package:dalel/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        scaffoldBackgroundColor: AppColors.offWhite,
+        fontFamily: "Poppins",
       ),
       home: const Dalel(),
     );
