@@ -1,3 +1,4 @@
+import 'package:dalel/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,11 +21,16 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class Dalel extends StatelessWidget {
   const Dalel({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        body: Image.asset(Assets.imagesForgotPassword),
+      ),
+    );
   }
 }
