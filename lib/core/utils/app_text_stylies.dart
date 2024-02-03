@@ -8,4 +8,10 @@ abstract class AppTextStylies {
     fontFamily: "Pacifico",
     color: AppColors.deepBrown,
   );
+  static const poppins500Style24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    fontFamily: "Poppins",
+    color: Colors.black,
+  );
 }
