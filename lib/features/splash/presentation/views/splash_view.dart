@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dalel/core/function/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
+import 'package:dalel/features/on_boarding/presentation/views/function/onboarding_visited.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,8 +16,15 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
+   bool isOnBoardingVisited = onBoardingVisited();
+   if(isOnBoardingVisited){
+    delayedNavigation(context,"/signUp");
+
+   }else{
+    delayedNavigation(context,"/onBoarding");
+
+   }
     super.initState();
-    delayedNavigation(context);
   }
 
   @override
@@ -32,8 +40,8 @@ class _SplashViewState extends State<SplashView> {
   }
 }
 
-void delayedNavigation(BuildContext context) {
+void delayedNavigation(BuildContext context,String path) {
   Future.delayed(const Duration(milliseconds: 2000), () {
-    customReplacementNavigation(context, "/onBoarding");
+    customReplacementNavigation(context, path);
   });
 }
