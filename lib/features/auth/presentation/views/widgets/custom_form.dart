@@ -12,34 +12,39 @@ class CustomForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {},
       builder: (context, state) {
         return Form(
+          key: authCubit.signUpKey,
           child: Column(children: [
             CustomTextFormField(
               label: AppStrings.fristName,
-              onChanged: (firstName) =>
-                  BlocProvider.of<AuthCubit>(context).firstName = firstName,
+              onChanged: (firstName) => authCubit.firstName = firstName,
             ),
             CustomTextFormField(
                 label: AppStrings.lastName,
-                onChanged: (lastName) =>
-                    BlocProvider.of<AuthCubit>(context).lastName = lastName),
+                onChanged: (lastName) => authCubit.lastName = lastName),
             CustomTextFormField(
                 label: AppStrings.emailAddress,
-                onChanged: (emailAddress) => BlocProvider.of<AuthCubit>(context)
-                    .emailAddress = emailAddress),
+                onChanged: (emailAddress) =>
+                    authCubit.emailAddress = emailAddress),
             CustomTextFormField(
                 label: AppStrings.password,
                 isPassword: true,
-                onChanged: (password) =>
-                    BlocProvider.of<AuthCubit>(context).password = password),
+                onChanged: (password) => authCubit.password = password),
             const TermsAndCondition(),
             const SizedBox(height: 88),
-            CustomButton(onPressed: () {
-              BlocProvider.of<AuthCubit>(context).signUpWithEmailAndPassword();
-            }, text: AppStrings.signUp),
+            CustomButton(
+                onPressed: authCubit.termsAndCondition
+                    ? () {
+                        if (authCubit.signUpKey.currentState!.validate()) {
+                          authCubit.signUpWithEmailAndPassword();
+                        }
+                      }
+                    : null,
+                text: AppStrings.signUp),
           ]),
         );
       },
