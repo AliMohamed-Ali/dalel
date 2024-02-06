@@ -13,4 +13,5 @@ final class SignUpFailureState extends AuthState {
 }
 
 final class TermsAndConditionUpdate extends AuthState {}
+final class ShowPasswordState extends AuthState {}
 

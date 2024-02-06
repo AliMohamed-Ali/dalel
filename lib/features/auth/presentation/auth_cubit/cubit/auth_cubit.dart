@@ -8,6 +8,7 @@ class AuthCubit extends Cubit<AuthState> {
   String? firstName, lastName, emailAddress, password;
   bool termsAndCondition = false;
   GlobalKey<FormState> signUpKey = GlobalKey();
+  bool isShowPassword =false;
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
@@ -33,5 +34,9 @@ class AuthCubit extends Cubit<AuthState> {
   updateTermsAndCondition({required bool newValue}) {
     termsAndCondition = newValue;
     emit(TermsAndConditionUpdate());
+  }
+  showPassoword(){
+    isShowPassword = !isShowPassword;
+    emit(ShowPasswordState());
   }
 }
