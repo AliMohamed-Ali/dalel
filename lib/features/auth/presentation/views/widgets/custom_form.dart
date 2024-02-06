@@ -23,7 +23,7 @@ class CustomForm extends StatelessWidget {
         }
         if (state is SignUpSuccessState) {
           showToast("SignUp Successfuly");
-          customReplacementNavigation(context, "/login");
+          customReplacementNavigation(context, "/home");
         }
       },
       builder: (context, state) {
@@ -42,7 +42,7 @@ class CustomForm extends StatelessWidget {
                 onChanged: (emailAddress) =>
                     authCubit.emailAddress = emailAddress),
             CustomTextFormField(
-                isObscureText: authCubit.isShowPassword,
+                isObscureText: !authCubit.isShowPassword,
                 suffixIcon: IconButton(
                   icon: Icon(authCubit.isShowPassword
                       ? Icons.visibility_off
