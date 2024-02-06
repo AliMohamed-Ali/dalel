@@ -33,10 +33,16 @@ abstract class AppTextStylies {
     fontFamily: "Poppins",
     color: AppColors.deepGrey,
   );
-  static const poppins600Style28 = TextStyle(
-    fontSize: 28,
+  static const poppins600Style24 = TextStyle(
+    fontSize: 24,
     fontWeight: FontWeight.w600,
     fontFamily: "Poppins",
     color: Colors.black,
+  );
+  static const saira700Style32 = TextStyle(
+    fontSize: 32,
+    fontFamily: "Saira",
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
   );
 }

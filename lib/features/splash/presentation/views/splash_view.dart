@@ -20,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
     bool isOnBoardingVisited = onBoardingVisited();
     if (isOnBoardingVisited) {
       FirebaseAuth.instance.currentUser == null
-          ? delayedNavigation(context, "/signUp")
+          ? delayedNavigation(context, "/login")
           : delayedNavigation(context, "/home");
     } else {
       delayedNavigation(context, "/onBoarding");

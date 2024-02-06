@@ -8,12 +8,13 @@ class AuthCubit extends Cubit<AuthState> {
   String? firstName, lastName, emailAddress, password;
   bool termsAndCondition = false;
   GlobalKey<FormState> signUpKey = GlobalKey();
-  bool isShowPassword =false;
+  GlobalKey<FormState> logInKey = GlobalKey();
+  bool isShowPassword = false;
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress!,
         password: password!,
       );
@@ -31,11 +32,32 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  loginWithEmailAddressAndPassword() async {
+    try {
+      emit(LoginLoadingState());
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress!,
+        password: password!,
+      );
+      emit(LoginSuccessState());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(LoginFailureState(errorMessage: 'No user found for that email.'));
+      } else if (e.code == 'wrong-password') {
+        emit(LoginFailureState(
+            errorMessage: 'Wrong password provided for that user.'));
+      }
+    } catch (e) {
+      emit(LoginFailureState(errorMessage: e.toString()));
+    }
+  }
+
   updateTermsAndCondition({required bool newValue}) {
     termsAndCondition = newValue;
     emit(TermsAndConditionUpdate());
   }
-  showPassoword(){
+
+  showPassoword() {
     isShowPassword = !isShowPassword;
     emit(ShowPasswordState());
   }

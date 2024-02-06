@@ -1,14 +1,14 @@
-import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeText extends StatelessWidget {
-  const WelcomeText({super.key});
+  const WelcomeText({super.key, required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return const Align(
-      child: Text(AppStrings.welcome, style: AppTextStylies.poppins600Style28),
+    return Align(
+      child: Text(text, style: AppTextStylies.poppins600Style24),
     );
   }
 }

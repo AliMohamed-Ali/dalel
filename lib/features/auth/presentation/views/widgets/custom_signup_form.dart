@@ -10,8 +10,8 @@ import 'package:dalel/features/auth/presentation/views/widgets/terms_and_conditi
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomForm extends StatelessWidget {
-  const CustomForm({super.key});
+class CustomSignupForm extends StatelessWidget {
+  const CustomSignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
