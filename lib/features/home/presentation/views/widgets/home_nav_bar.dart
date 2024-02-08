@@ -10,8 +10,8 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 PersistentTabController controller = PersistentTabController(initialIndex: 0);
 
-class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({super.key});
+class HomeNavBar extends StatelessWidget {
+  const HomeNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
