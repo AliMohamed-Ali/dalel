@@ -13,11 +13,11 @@ class AuthCubit extends Cubit<AuthState> {
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
-
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress!,
         password: password!,
       );
+      verifyEmail();
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -26,10 +26,16 @@ class AuthCubit extends Cubit<AuthState> {
       } else if (e.code == 'email-already-in-use') {
         emit(SignUpFailureState(
             errorMessage: "The account already exists for that email."));
+      } else {
+        emit(SignUpFailureState(errorMessage: e.toString()));
       }
     } catch (e) {
       emit(SignUpFailureState(errorMessage: e.toString()));
     }
+  }
+
+  verifyEmail() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
   loginWithEmailAddressAndPassword() async {
@@ -39,7 +45,10 @@ class AuthCubit extends Cubit<AuthState> {
         email: emailAddress!,
         password: password!,
       );
-      emit(LoginSuccessState());
+      FirebaseAuth.instance.currentUser!.emailVerified
+          ? emit(LoginSuccessState())
+          : emit(
+              LoginFailureState(errorMessage: "Check your email for verify"));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         emit(LoginFailureState(errorMessage: 'No user found for that email.'));
