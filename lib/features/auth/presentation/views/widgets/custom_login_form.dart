@@ -58,9 +58,9 @@ class CustomLoginForm extends StatelessWidget {
                       )
                     : CustomButton(
                         text: AppStrings.signIn,
-                        onPressed: () {
+                        onPressed: () async{
                           if (authCubit.logInKey.currentState!.validate()) {
-                            authCubit.loginWithEmailAddressAndPassword();
+                           await authCubit.loginWithEmailAddressAndPassword();
                           }
                         },
                       )

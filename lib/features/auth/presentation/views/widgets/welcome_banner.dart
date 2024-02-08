@@ -22,7 +22,6 @@ class WelcomBanner extends StatelessWidget {
             AppStrings.appName,
             style: AppTextStylies.saira700Style32,
           ),
-          const SizedBox(height: 18),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,

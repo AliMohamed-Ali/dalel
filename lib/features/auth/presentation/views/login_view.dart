@@ -3,7 +3,7 @@ import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/features/auth/presentation/views/widgets/have_account_widget.dart';
 import 'package:dalel/features/auth/presentation/views/widgets/custom_login_form.dart';
 import 'package:dalel/features/auth/presentation/views/widgets/welcome_banner.dart';
-import 'package:dalel/features/auth/presentation/views/widgets/welcome_text.dart';
+import 'package:dalel/features/auth/presentation/views/widgets/welcome_text_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {

@@ -17,7 +17,6 @@ class HaveAccountWidget extends StatelessWidget {
           text: TextSpan(children: [
             TextSpan(text: text1, style: AppTextStylies.poppins400Style12),
             TextSpan(
-                onEnter: (event) {},
                 text: text2,
                 style: AppTextStylies.poppins400Style12
                     .copyWith(color: AppColors.lightGrey)),
