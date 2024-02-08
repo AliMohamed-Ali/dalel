@@ -1,3 +1,4 @@
+import 'package:dalel/core/function/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ class ForgetPasswordWidget extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          customNavigation(context, "/forgetPassword");
+        },
         child: Text(
           AppStrings.forgotPassword,
           style: AppTextStylies.poppins600Style24.copyWith(fontSize: 12),

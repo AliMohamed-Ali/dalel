@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
             child: SizedBox(height: 32),
           ),
           const SliverToBoxAdapter(
-            child: WelcomeText(text: AppStrings.welcomeBack),
+            child: WelcomeTextWidget(text: AppStrings.welcomeBack),
           ),
           const SliverToBoxAdapter(
             child: CustomLoginForm(),
