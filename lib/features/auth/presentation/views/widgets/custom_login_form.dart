@@ -20,7 +20,7 @@ class CustomLoginForm extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginSuccessState) {
           showToast("Welcome Back!!");
-          customReplacementNavigation(context, '/home');
+          customReplacementNavigation(context, '/bottomNavBar');
         } else if (state is LoginFailureState) {
           showToast(state.errorMessage);
         }
