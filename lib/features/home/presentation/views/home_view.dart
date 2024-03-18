@@ -1,9 +1,3 @@
-import 'package:dalel/core/utils/app_assets.dart';
-import 'package:dalel/core/utils/app_colors.dart';
-import 'package:dalel/core/utils/app_strings.dart';
-import 'package:dalel/core/utils/app_text_stylies.dart';
-import 'package:dalel/core/widgets/custom_head_text.dart';
-import 'package:dalel/features/home/presentation/views/widgets/custom_list_view.dart';
 import 'package:dalel/features/home/presentation/views/widgets/historical_character_section.dart';
 import 'package:dalel/features/home/presentation/views/widgets/custom_option_item.dart';
 import 'package:dalel/features/home/presentation/views/widgets/historical_souvenirs_section.dart';
