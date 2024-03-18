@@ -9,15 +9,20 @@ class HomeViewCustomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
       children: [
-        SvgPicture.asset(Assets.imagesMenu),
-        Text(
-          AppStrings.appName,
-          style: AppTextStylies.pacifico400Style64.copyWith(fontSize: 22),
-        )
+        const SizedBox(height: 28),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(Assets.imagesMenu),
+            Text(
+              AppStrings.appName,
+              style: AppTextStylies.pacifico400Style64.copyWith(fontSize: 22),
+            )
+          ],
+        ),
       ],
-    );  
+    );
   }
 }

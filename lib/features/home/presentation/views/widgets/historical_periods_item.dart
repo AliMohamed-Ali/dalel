@@ -2,8 +2,9 @@ import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:flutter/material.dart';
 
-class HistoricalPeriodItem extends StatelessWidget {
-  const HistoricalPeriodItem({super.key, required this.text, required this.imagePath});
+class CustomOptionItem extends StatelessWidget {
+  const CustomOptionItem(
+      {super.key, required this.text, required this.imagePath});
   final String text;
   final String imagePath;
   @override
@@ -38,7 +39,7 @@ class HistoricalPeriodItem extends StatelessWidget {
         Container(
           width: 47,
           height: 64,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage(imagePath))),
         )
       ]),

@@ -2,8 +2,8 @@ import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:flutter/material.dart';
 
-class HistoricalCharactersItem extends StatelessWidget {
-  const HistoricalCharactersItem({super.key, required this.title, required this.imagePath});
+class ListViewItem extends StatelessWidget {
+  const ListViewItem({super.key, required this.title, required this.imagePath});
   final String title;
   final String imagePath;
   @override
@@ -27,8 +27,10 @@ class HistoricalCharactersItem extends StatelessWidget {
           Container(
             width: 74,
             height: 96,
-            decoration:  BoxDecoration(
-                image: DecorationImage(image: AssetImage(imagePath))),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: AssetImage(imagePath), fit: BoxFit.fill)),
           ),
           const SizedBox(height: 11),
           Text(

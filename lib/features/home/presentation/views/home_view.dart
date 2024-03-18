@@ -3,8 +3,10 @@ import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_stylies.dart';
 import 'package:dalel/core/widgets/custom_head_text.dart';
-import 'package:dalel/features/home/presentation/views/widgets/historical_characters_section.dart';
-import 'package:dalel/features/home/presentation/views/widgets/historical_periods_section.dart';
+import 'package:dalel/features/home/presentation/views/widgets/custom_list_view.dart';
+import 'package:dalel/features/home/presentation/views/widgets/historical_character_section.dart';
+import 'package:dalel/features/home/presentation/views/widgets/custom_option_item.dart';
+import 'package:dalel/features/home/presentation/views/widgets/historical_souvenirs_section.dart';
 import 'package:dalel/features/home/presentation/views/widgets/home_custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -18,17 +20,10 @@ class HomeView extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: CustomScrollView(slivers: [
-            SliverToBoxAdapter(child: SizedBox(height: 28)),
             SliverToBoxAdapter(child: HomeViewCustomNavBar()),
-            SliverToBoxAdapter(child: SizedBox(height: 32)),
-            SliverToBoxAdapter(
-                child: CustomHeadTitle(text: AppStrings.historicalPeriods)),
-            SliverToBoxAdapter(child: SizedBox(height: 16)),
             SliverToBoxAdapter(child: HistoricalPeriodsSection()),
-            SliverToBoxAdapter(child: SizedBox(height: 32)),
-            SliverToBoxAdapter(
-                child: CustomHeadTitle(text: AppStrings.historicalCharacters)),
-            SliverToBoxAdapter(child: HistoricalCharactersSection()),
+            SliverToBoxAdapter(child: HistoricalCharacterSection()),
+            SliverToBoxAdapter(child: HistoricalSouvenirsSection()),
           ]),
         ),
       ),
